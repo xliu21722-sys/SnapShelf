@@ -2,6 +2,8 @@
 
 面向学习和作业的 Mac 原生多截图暂存工具：连续截图、备注排序、滚动长截图、多图拼接，并可按顺序粘贴到 Chrome 文档中。
 
+[直接下载最新版 macOS 安装包](https://github.com/xliu21722-sys/SnapShelf/releases/latest/download/SnapShelf-v0.1.0-macOS-arm64.zip) · [查看全部 Releases](https://github.com/xliu21722-sys/SnapShelf/releases)
+
 ## 下载与安装
 
 需要 **macOS 14 或更新版本**，当前发布包支持 **Apple Silicon（M1/M2/M3/M4 等）**。
