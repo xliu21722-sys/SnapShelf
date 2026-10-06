@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>截图暂存 · 滚动与粘贴验收页</title>
+<style>
+body{margin:0;background:#f3f4f8;color:#263046;font:17px/1.8 system-ui,sans-serif}main{max-width:820px;margin:40px auto}h1{font-size:30px}section{padding:24px;background:white;border-radius:16px;margin:20px 0}#editor{min-height:200px;border:2px dashed #969ae5;padding:24px;outline:none}#editor img{max-width:100%}.row{display:flex;gap:24px;padding:15px 20px;border-bottom:1px solid #eee}.row:nth-child(even){background:#f7f8ff}.number{font-family:monospace;font-weight:bold;color:#5960cd;min-width:60px}.badge{height:12px;margin-top:12px;border-radius:4px;background:#7d84c9}small{color:#687188}
+</style>
+<main><h1>滚动长截图验收页</h1><p>框选下方行号区域，缓慢向下滚动。最终图片应连续显示行号，无缺失、重复或接缝错位。请将鼠标放在框选区内，验证不含系统指针。</p>
+<section><h2>自动粘贴测试区</h2><small>先点击下方正文，再到截图暂存点击“粘贴到 Chrome”。仅用于本地测试，不代表飞书适配已完成。</small><div id="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="截图粘贴测试正文"><p>在这里插入截图与备注：</p></div></section>
+<section id="rows"></section></main>
+<script>
+const rows=document.getElementById('rows');
+for(let i=1;i<=180;i++){
+ const row=document.createElement('div'); row.className='row';
+ const n=document.createElement('span');n.className='number';n.textContent=String(i).padStart(3,'0');
+ const text=document.createElement('div');text.textContent=`第 ${i} 行：复习笔记与例题 ${i*i+17}，请检查这一行是否完整。`;
+ const bar=document.createElement('div');bar.className='badge';bar.style.width=`${45+((i*73)%260)}px`;bar.style.background=`hsl(${(i*137)%360} 36% 65%)`;
+ text.appendChild(bar);row.append(n,text);rows.appendChild(row);
+}
+</script>
+</html>

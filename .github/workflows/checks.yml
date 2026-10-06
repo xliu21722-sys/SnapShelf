@@ -1,0 +1,15 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  core-checks:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run core checks
+        run: swift run SnapCoreChecks
+      - name: Build app bundle
+        run: bash scripts/build-app.sh
