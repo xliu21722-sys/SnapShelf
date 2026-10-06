@@ -8,7 +8,7 @@ jobs:
   core-checks:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run core checks
         run: swift run SnapCoreChecks
       - name: Build app bundle
